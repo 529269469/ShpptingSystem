@@ -1,0 +1,150 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.fhxh.shpptingsystem'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.fhxh.shpptingsystem"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "monisheji.apk"
+                }
+            }
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "monisheji.apk"
+                }
+            }
+        }
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.3.2'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+kotlin {
+    sourceSets.debug {
+        //如果通过productFlavors配置了多渠道，则配置 /../ksp/xxxDebug/kotlin
+        kotlin.srcDir("build/generated/ksp/debug/kotlin")
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+    implementation 'androidx.activity:activity-compose:1.5.1'
+    implementation platform('androidx.compose:compose-bom:2022.10.00')
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-graphics'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation files('libs/sdkapi.jar')
+
+    implementation project(path: ':opencv')
+
+    //屏幕适配
+    implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+    //折线图
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    androidTestImplementation platform('androidx.compose:compose-bom:2022.10.00')
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+
+    //数据库
+    def room_version = "2.4.3"
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+
+    //recyclerview适配器
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.10'
+    //下拉刷新上拉加载
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+
+    //权限请求
+    implementation 'com.guolindev.permissionx:permissionx:1.6.4'
+    // 串口
+    implementation 'com.licheedev:android-serialport:2.1.3'
+
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+
+    //MMKV键值存储框架
+    implementation 'com.tencent:mmkv-static:1.2.9'
+
+    implementation 'com.github.getActivity:ToastUtils:11.2'
+
+    implementation 'org.greenrobot:eventbus:3.3.1'
+    //excel
+    implementation 'net.sourceforge.jexcelapi:jxl:2.6.12'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation files('src/main/java/com/fhxh/shpptingsystem/sdk/brightekjar1.1.jar')
+    implementation 'com.google.android.gms:play-services-vision:20.1.3'
+
+}

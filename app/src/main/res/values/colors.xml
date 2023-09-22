@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="green">#008000</color>
+    <color name="gray">#808080</color>
+
+
+
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorYouXiu">#1ac074</color>
+    <color name="colorLiangHao">#2683eb</color>
+    <color name="colorHeGe">#dbe812</color>
+    <color name="colorBuHeGe">#d8103a</color>
+    <color name="texas_rose">#FFB45C</color>
+    <color name="inRoundColor">#FFDCDCDC</color>
+    <color name="outRoundColor">#FFF0F0F0</color>
+    <color name="targetGreen">#FF0d6833</color>
+
+    <color name="mine_shaft_alpha_100">#FF343434</color>
+    <color name="martini_alpha_100">#FF9A9A9A</color>
+    <color name="dove_gray">#666666</color>
+    <color name="casablanca">#FABC44</color>
+    <color name="white_alpha_100">#BFFFFFFF</color>
+    <color name="mine_shaft">#343434</color>
+    <color name="black5">#0D000000</color>
+    <!-- 透明色 -->
+    <color name="transparent">#00000000</color>
+    <!-- 分割线的颜色 -->
+    <color name="colorLine">#ECECEC</color>
+
+    <!-- 对话框确认按钮文本颜色 -->
+    <color name="colorConfirm">#007AFF</color>
+    <!-- 对话框取消按钮文本颜色 -->
+    <color name="colorCancel">#F44336</color>
+
+    <color name="atomic_tangerine">#FE9A64</color>
+    <color name="gallery">#BBBBBB</color>
+    <color name="sea_buckthorn">#FAB030</color>
+    <color name="colorButtonDisable">#BBBBBB</color>
+
+    <color name="black_33">#333333</color>
+    <color name="cloud_burst">#292E5C</color>
+    <color name="port_gore">#191946</color>
+    <color name="mauve">#B68EFF</color>
+    <color name="silver">#BCBCBC</color>
+    <color name="umeng_divide">#eeeeee</color>
+    <color name="gray_99">#999999</color>
+    <color name="blue_3885">#3885ed</color>
+    <color name="textColor">@color/colorYouXiu</color>
+
+    <drawable name="blue_00ddf">#A300DDFF</drawable>
+
+</resources>

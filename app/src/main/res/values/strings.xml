@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">模拟射击</string>
+    <string name="title_activity_open_face">OpenFaceActivity</string>
+</resources>

@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="HistoryModel"
+            type="com.fhxh.shpptingsystem.ui.HistoryActivity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:background="@mipmap/title"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="射击模拟训练系统"
+                android:textColor="@color/textColor"
+                android:textScaleX="1.2"
+                android:textSize="30sp"
+                android:textStyle="bold|italic" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/history_return"
+                android:layout_width="66dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="24dp"
+                android:drawableStart="@mipmap/shutdown"
+                android:gravity="center"
+                android:text="关闭"
+                android:textColor="@color/textColor" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:background="@mipmap/bian5"
+            android:layout_marginTop="96dp"
+            android:layout_marginStart="24dp"
+            android:layout_width="296dp"
+            android:orientation="vertical"
+            android:layout_height="680dp">
+
+            <LinearLayout
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+                <TextView
+                    android:background="@drawable/data"
+                    android:layout_marginStart="16dp"
+                    android:id="@+id/history_date_text"
+                    android:layout_width="124dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="#99000000"
+                    android:textSize="16dp"
+                    android:text="日期" />
+
+                <TextView
+                    android:background="@drawable/charts"
+                    android:textColor="#99000000"
+                    android:id="@+id/history_person_text"
+                    android:layout_width="124dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    android:text="人员" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_margin="16dp"
+                android:id="@+id/history_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginStart="336dp"
+            android:layout_marginTop="96dp"
+            android:orientation="vertical"
+            android:layout_width="608dp"
+            android:layout_height="match_parent">
+            <FrameLayout
+                android:background="@drawable/charts"
+                android:layout_width="608dp"
+                android:layout_height="510dp">
+                <LinearLayout
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:id="@+id/history_move"
+                        android:background="@drawable/data"
+                        android:gravity="center"
+                        android:layout_width="96dp"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/history_move_image"
+                            android:src="@mipmap/icon_move"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:drawablePadding="3dp"
+                            android:textColor="#99000000"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="轨迹" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_marginStart="16dp"
+                        android:id="@+id/history_rt"
+                        android:background="@drawable/charts"
+                        android:gravity="center"
+                        android:layout_width="96dp"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/history_rt_image"
+                            android:src="@mipmap/icon_rt_s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:textColor="#99000000"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="RT" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginStart="16dp"
+                        android:id="@+id/history_rxy"
+                        android:background="@drawable/charts"
+                        android:gravity="center"
+                        android:layout_width="96dp"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/history_rxy_image"
+                            android:src="@mipmap/icon_txy_s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:textColor="#99000000"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:text="TXY" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_marginTop="96dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/rl_history_target"
+                        android:layout_width="390dp"
+                        android:layout_height="390dp"
+                        android:layout_gravity="center_horizontal">
+
+                        <com.fhxh.shpptingsystem.view.TargetView
+                            android:id="@+id/history_image"
+                            android:layout_width="390dp"
+                            android:layout_height="390dp"
+                            android:src="@mipmap/xhhdtarget_di"/>
+
+                        <ImageView
+                            android:layout_width="390dp"
+                            android:layout_height="390dp"
+                            android:src="@mipmap/target3001_01" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/history_rt_linear"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical">
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:layout_gravity="center"
+                            android:id="@+id/history_rt_chart"
+                            android:layout_width="493dp"
+                            android:layout_height="341dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/history_rxy_linear"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical">
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/history_rxy_chart_x"
+                            android:layout_width="544dp"
+                            android:layout_height="180dp"
+                            android:layout_gravity="center" />
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/history_rxy_chart_y"
+                            android:layout_width="544dp"
+                            android:layout_height="180dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="30dp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_marginTop="16dp"
+                android:background="@drawable/charts"
+                android:layout_width="match_parent"
+                android:layout_height="154dp"
+                android:orientation="horizontal">
+
+                <com.fhxh.shpptingsystem.view.CircleProgressBar
+                    android:id="@+id/history_progress_holding_gunt_bar"
+                    android:layout_width="102dp"
+                    android:layout_height="102dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    app:inCircleColor="#DCDCDC"
+                    app:outCircleColor="#F0F0F0"
+                    app:progressColor="#50CE7B"
+                    app:textBold="true"
+                    app:textColor="#50CE7B"
+                    app:lineWidth="3dp"/>
+                <com.fhxh.shpptingsystem.view.CircleProgressBar
+                    android:id="@+id/history_progress_aim_bar"
+                    android:layout_width="102dp"
+                    android:layout_height="102dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    app:inCircleColor="#DCDCDC"
+                    app:outCircleColor="#F0F0F0"
+                    app:progressColor="#50CE7B"
+                    app:textBold="true"
+                    app:textColor="#50CE7B"
+                    app:lineWidth="3dp"/>
+                <com.fhxh.shpptingsystem.view.CircleProgressBar
+                    android:id="@+id/history_progress_firing_bar"
+                    android:layout_width="102dp"
+                    android:layout_height="102dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    app:inCircleColor="#DCDCDC"
+                    app:outCircleColor="#F0F0F0"
+                    app:progressColor="#50CE7B"
+                    app:textBold="true"
+                    app:textColor="#50CE7B"
+                    app:lineWidth="3dp"/>
+                <com.fhxh.shpptingsystem.view.CircleProgressBar
+                    android:id="@+id/history_progress_achievement_gunt_bar"
+                    android:layout_width="102dp"
+                    android:layout_height="102dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    app:inCircleColor="#DCDCDC"
+                    app:outCircleColor="#F0F0F0"
+                    app:progressColor="#50CE7B"
+                    app:textBold="true"
+                    app:textColor="#50CE7B"
+                    app:lineWidth="3dp"/>
+                <com.fhxh.shpptingsystem.view.CircleProgressBar
+                    android:id="@+id/history_progress_totality_bar"
+                    android:layout_width="102dp"
+                    android:layout_height="102dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    app:inCircleColor="#DCDCDC"
+                    app:outCircleColor="#F0F0F0"
+                    app:progressColor="#50CE7B"
+                    app:textBold="true"
+                    app:textColor="#50CE7B"
+                    app:lineWidth="3dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="96dp"
+            android:layout_marginStart="960dp"
+            android:layout_width="296dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:background="@mipmap/bian6"
+                android:layout_width="match_parent"
+                android:layout_height="146dp">
+
+                <TextView
+                    android:gravity="center"
+                    android:drawableStart="@mipmap/name"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/textColor"
+                    android:id="@+id/history_person_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="名称" />
+
+
+                <TextView
+                    android:layout_marginEnd="18dp"
+                    android:layout_alignParentEnd="true"
+                    android:drawableStart="@mipmap/bureaus"
+                    android:textColor="@color/textColor"
+                    android:layout_marginTop="30dp"
+                    android:id="@+id/history_bureaus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="局id" />
+
+                <TextView
+                    android:layout_centerHorizontal="true"
+                    android:drawableStart="@mipmap/type"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/textColor"
+                    android:id="@+id/history_target_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="50米靶" />
+
+                <TextView
+                    android:layout_centerHorizontal="true"
+                    android:drawableStart="@mipmap/time"
+                    android:textColor="@color/textColor"
+                    android:layout_marginTop="95dp"
+                    android:id="@+id/history_hit_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="打靶时间" />
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="16dp"
+                android:background="@mipmap/bian7"
+                android:layout_width="296dp"
+                android:layout_height="348dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:drawableBottom="@mipmap/all_ring"
+                        android:textColor="@color/textColor"
+                        android:id="@+id/history_total_ring_num"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1.5"
+                        android:gravity="center"
+                        android:text="总环数: " />
+
+
+                    <TextView
+                        android:drawableBottom="@mipmap/cur_ring"
+                        android:textColor="@color/textColor"
+                        android:id="@+id/history_current_ring_num"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1.6"
+                        android:gravity="center"
+                        android:text="当前环数: " />
+
+                </LinearLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/history_count"
+                    android:layout_width="220dp"
+                    android:layout_height="88dp" />
+                <RelativeLayout
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="88dp">
+
+                    <LinearLayout
+                        android:id="@+id/history_last_shot"
+                        android:background="@drawable/charts"
+                        android:gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:layout_width="120dp"
+                        android:layout_height="36dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:src="@mipmap/property1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:textColor="@color/textColor"
+                            android:layout_marginStart="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="上一发"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/history_next_shot"
+                        android:background="@drawable/charts"
+                        android:gravity="center"
+                        android:layout_marginEnd="27dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="120dp"
+                        android:layout_height="36dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_gravity="center"
+                            android:src="@mipmap/property1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:textColor="@color/textColor"
+                            android:layout_marginStart="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="下一发"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/history_last_bureaus"
+                        android:background="@drawable/charts"
+                        android:gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="52dp"
+                        android:layout_width="120dp"
+                        android:layout_height="36dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:src="@mipmap/property1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:textColor="@color/textColor"
+                            android:layout_marginStart="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="上一局"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/history_next_bureaus"
+                        android:background="@drawable/charts"
+                        android:gravity="center"
+                        android:layout_marginEnd="27dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="52dp"
+                        android:layout_width="120dp"
+                        android:layout_height="36dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:src="@mipmap/property4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:textColor="@color/textColor"
+                            android:layout_marginStart="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="下一局"/>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="296dp"
+                android:layout_height="154dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:background="@drawable/btn"
+                    android:textColor="@color/white"
+                    android:id="@+id/history_print"
+                    android:layout_width="232dp"
+                    android:layout_height="56dp"
+                    android:gravity="center"
+                    android:text="打印当前成绩"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/history_excel"
+                    android:layout_width="232dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/btn"
+                    android:gravity="center"
+                    android:text="导出excel"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@mipmap/setting_back"
+    android:gravity="center"
+    android:layout_width="500dp"
+    android:layout_height="300dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:text="服务器IP："
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:id="@+id/dialog_setting_ip"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <Spinner
+        android:layout_marginTop="30dp"
+        android:id="@+id/dialog_setting_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:entries="@array/TargetType"
+        android:layout_gravity="center"
+        android:spinnerMode="dropdown"/>
+
+    <CheckBox
+        android:id="@+id/dialog_setting_play"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:text="是否语音播报"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/dialog_setting_print"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:text="是否自动打印"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dialog_setting_dimiss"
+            android:text="取消"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dialog_setting_ok"
+            android:text="确定"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

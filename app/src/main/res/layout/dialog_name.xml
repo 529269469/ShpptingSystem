@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <TextView
+        android:textSize="24sp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="注册/切换"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:hint="注册：请输入姓名"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        android:id="@+id/name_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center" />
+
+    <EditText
+        android:hint="注册：请输入部门"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_below="@id/name_name"
+        android:id="@+id/name_class"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:id="@+id/rl_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/name_quxiao"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="注册"
+            android:textColor="@color/colorBuHeGe"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/name_queding"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="切换"
+            android:textColor="@color/blue_3885"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/history_list_item_history"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="5dp"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:background="@drawable/charts"
+        android:id="@+id/history_list_item_number"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        android:layout_width="36dp"
+        android:layout_height="36dp" />
+</LinearLayout>

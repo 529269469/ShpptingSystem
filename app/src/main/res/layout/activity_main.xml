@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="main"
+            type="com.fhxh.shpptingsystem.ui.MainActivity" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:baselineAligned="false"
+        tools:context=".ui.MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp">
+
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/charts">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/main_light"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="25dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/main_socket"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="未连接"
+                            android:textColor="@color/green"
+                            android:textSize="20dp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/main_socket_con_"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:text="重连"
+                            android:textColor="@color/green"
+                            android:textSize="20dp" />
+
+                        <CheckBox
+                            android:id="@+id/main_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="80dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/main_socket_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="60dp"
+                            android:text="开始"
+                            android:textColor="@color/green"
+                            android:textSize="20dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/main_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="25dp"
+                            android:text="自由射击"
+                            android:textColor="@color/green"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/main_isStart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="50dp"
+                            android:text="未开始"
+                            android:textColor="@color/green"
+                            android:textSize="20sp" />
+                    </FrameLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_main_target"
+                        android:layout_width="532dp"
+                        android:layout_height="532dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="40dp">
+
+                        <com.fhxh.shpptingsystem.view.TargetView
+                            android:id="@+id/main_target_view"
+                            android:layout_width="532dp"
+                            android:layout_height="532dp"
+                            android:src="@mipmap/xhhdtarget_di" />
+
+                        <ImageView
+                            android:id="@+id/iv_target3001_01"
+                            android:layout_width="532dp"
+                            android:layout_height="532dp"
+                            android:src="@mipmap/target3001_01" />
+
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/main_lo"
+                        android:layout_width="82dp"
+                        android:layout_height="82dp"
+                        android:layout_marginStart="467dp"
+                        android:layout_marginTop="25dp"
+                        android:background="@mipmap/group38"
+                        android:gravity="center"
+                        android:text="10"
+                        android:textColor="@color/black"
+                        android:textSize="40sp" />
+                </FrameLayout>
+
+                <RelativeLayout
+                    android:layout_width="500dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.fhxh.shpptingsystem.view.CircleProgressBar
+                            android:id="@+id/main_progress_holding_gunt_bar"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginStart="16dp"
+                            app:inCircleColor="#DCDCDC"
+                            app:lineWidth="3dp"
+                            app:outCircleColor="#F0F0F0"
+                            app:progressColor="#50CE7B"
+                            app:textBold="true"
+                            app:textColor="#50CE7B" />
+
+                        <com.fhxh.shpptingsystem.view.CircleProgressBar
+                            android:id="@+id/main_progress_aim_bar"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginStart="16dp"
+                            app:inCircleColor="#DCDCDC"
+                            app:lineWidth="3dp"
+                            app:outCircleColor="#F0F0F0"
+                            app:progressColor="#50CE7B"
+                            app:textBold="true"
+                            app:textColor="#50CE7B" />
+
+                        <com.fhxh.shpptingsystem.view.CircleProgressBar
+                            android:id="@+id/main_progress_firing_bar"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginStart="16dp"
+                            app:inCircleColor="#DCDCDC"
+                            app:lineWidth="3dp"
+                            app:outCircleColor="#F0F0F0"
+                            app:progressColor="#50CE7B"
+                            app:textBold="true"
+                            app:textColor="#50CE7B" />
+
+                        <com.fhxh.shpptingsystem.view.CircleProgressBar
+                            android:id="@+id/main_progress_achievement_gunt_bar"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginStart="16dp"
+                            app:inCircleColor="#DCDCDC"
+                            app:lineWidth="3dp"
+                            app:outCircleColor="#F0F0F0"
+                            app:progressColor="#50CE7B"
+                            app:textBold="true"
+                            app:textColor="#50CE7B" />
+
+                        <com.fhxh.shpptingsystem.view.CircleProgressBar
+                            android:id="@+id/main_progress_totality_bar"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginStart="16dp"
+                            app:inCircleColor="#DCDCDC"
+                            app:lineWidth="3dp"
+                            app:outCircleColor="#F0F0F0"
+                            app:progressColor="#50CE7B"
+                            app:textBold="true"
+                            app:textColor="#50CE7B" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/main_target_mian"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center_horizontal|bottom"
+                            android:text="50靶面"
+                            android:textColor="@color/gray"
+                            android:textSize="25dp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="24dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="99dp"
+                    android:background="@drawable/shape_bian3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/main_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="名字"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#1786EF" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="局ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#1786EF" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="当前发序"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#1786EF" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="当前环数"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#1786EF" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="总环数"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#1786EF" />
+
+                    <LinearLayout
+                        android:id="@+id/main_info2"
+                        android:layout_width="match_parent"
+                        android:layout_height="49dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/main_edit_person_name"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:text="学员1"
+                            android:textColor="@color/textColor"
+                            android:textSize="20sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#1786EF" />
+
+                        <TextView
+                            android:id="@+id/main_text_ju_id"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/textColor"
+                            android:textSize="20sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#1786EF" />
+
+                        <TextView
+                            android:id="@+id/main_text_shoot_num"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/textColor"
+                            android:textSize="20sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#1786EF" />
+
+                        <TextView
+                            android:id="@+id/main_text_current_ringnum"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="0.0"
+                            android:textColor="@color/textColor"
+                            android:textSize="20sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#1786EF" />
+
+                        <TextView
+                            android:id="@+id/maintext_all_ju_num"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="0.0"
+                            android:textColor="@color/textColor"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_bian3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:text="发序"
+                            android:textColor="@color/green"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#1786EF" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:text="环数"
+                            android:textColor="@color/green"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#1786EF" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:gravity="center"
+                            android:text="方向"
+                            android:textColor="@color/green"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#1786EF" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:gravity="center"
+                            android:text="用时"
+                            android:textColor="@color/green"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#1786EF" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:gravity="center"
+                            android:text="时间"
+                            android:textColor="@color/green"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#1786EF" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="回放"
+                            android:textColor="@color/green"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#1786EF" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/main_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/main_layout_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="296dp"
+                        android:layout_height="105dp"
+                        android:layout_marginStart="24dp"
+                        android:background="@drawable/charts"
+                        android:visibility="gone">
+
+                        <FrameLayout
+                            android:layout_width="177dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:background="@mipmap/bian4">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/main_gun"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@mipmap/q95" />
+                        </FrameLayout>
+
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="90dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/charts"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/main_text_gun_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="枪型 95"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:id="@+id/main_iv_gun_type"
+                                android:src="@mipmap/q2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/main_text_all_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableBottom="@mipmap/all"
+                                android:gravity="center"
+                                android:text="总发数"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/main_text_surplus_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableBottom="@mipmap/z"
+                                android:gravity="center"
+                                android:text="子弹数"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/main_chart"
+                        android:layout_width="0dp"
+                        android:layout_height="90dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/charts" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="@mipmap/title">
+
+            <TextClock
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:format12Hour="yyyy年MM月dd日 HH:mm:ss"
+                android:format24Hour="yyyy年MM月dd日 HH:mm:ss"
+                android:gravity="center"
+                android:textColor="@color/textColor" />
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="240dp">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/svg_battery" />
+
+                <TextView
+                    android:id="@+id/tv_home_battery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/main_history"
+                android:layout_width="66dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/main_setting"
+                android:drawableStart="@mipmap/record"
+                android:gravity="center"
+                android:text="历史"
+                android:textColor="@color/textColor" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/main_setting"
+                android:layout_width="66dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="12dp"
+                android:layout_toStartOf="@id/main_close"
+                android:drawableStart="@mipmap/setting"
+                android:gravity="center"
+                android:text="设置"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/main_close"
+                android:layout_width="66dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="12dp"
+                android:layout_toStartOf="@id/main_shut_down"
+                android:drawableStart="@mipmap/shutdown"
+                android:gravity="center"
+                android:text="关闭"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/main_shut_down"
+                android:layout_width="66dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="24dp"
+                android:drawableStart="@mipmap/shutdown"
+                android:gravity="center"
+                android:text="关机"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/main_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="射击模拟训练系统"
+                android:textColor="@color/textColor"
+                android:textScaleX="1.2"
+                android:textSize="30sp"
+                android:textStyle="bold|italic" />
+        </RelativeLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/main_demo"
+            android:layout_width="300dp"
+            android:layout_height="500dp"
+            android:background="#00FFFFFF"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+</layout>
